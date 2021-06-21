@@ -16,12 +16,12 @@ var current_page = 0;
 			}
 			$('#page-'+current_page).animate({
 				"margin-left": "-100%"
-			}, 300, function(){
+			}, 200, function(){
 				$('#page-'+current_page).hide();
 				current_page+=1;
 				$("#page-"+current_page).animate({
 					"margin-left": "0%"
-				}, 300, function(){
+				}, 50, function(){
 					$("#page-"+current_page).show();
 					if(current_page == 0) 
 						$('#prev').show();
@@ -40,14 +40,18 @@ var current_page = 0;
 				$("#next").show();
 				$("#btn").hide();
 			}
+			// $('#page-'+current_page).fadeOut('500');
 			$('#page-'+current_page).animate({
-				"margin-left": "100%"
-			}, 500, function(){
+				"margin-left": "50%",
+				"opacity":"0"
+				
+			}, 200, function(){
 				$('#page-'+current_page).hide();
+				$('#page-'+current_page).css('opacity',1);
 				--current_page;
 				$("#page-"+current_page).animate({
 					"margin-left": "0%"
-				}, 500, function(){
+				}, 50, function(){
 					$("#page-"+current_page).show();
 					if(current_page == 0) 
 						$('#prev').show();
