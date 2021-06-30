@@ -12,21 +12,29 @@
 }
 #page-1{
 	display: none;
+	height: 118vh;
 	margin-left: 100%;
+	
+	
 }
 #page-2{
 	display: none;
+	height: 90vh;
 	margin-left: 100%;
+	
+	
+	
 }
 #page-3{
 	display: none;
 }
 .nav button{
 	font-size: 30px;
-	color: #0000ff;
+    color: #0000ff;
 	cursor: pointer;
 	display: none;
 }
+
 
 /* puchu */
 
@@ -40,7 +48,10 @@
 	width: 30vw !important;
 }
 .info-set-2 .input-field{
-	width: 100% !important;
+	width:350px !important;
+	margin:auto
+  
+	
 }
 @media only screen and (min-width: 768px){
 	.page-wrap{

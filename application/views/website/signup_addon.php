@@ -13,13 +13,18 @@
 
         <link rel="stylesheet" href="<?=base_url();?>/assets/css/style-signup.css">
         <link rel="stylesheet" href="<?=base_url();?>/assets/css/style-signup-form.css">
+        <link rel="stylesheet" href="<?=base_url();?>/assets/css/style-nav-footer.css">
+
+       
+        
 </head>
 <body>
-    <!-- navbar -->
+
+<!-- navbar -->
 <?php
 
-        $this->load->view('website/nav_bar');
-    ?>
+$this->load->view('website/nav_bar');
+?>
     <!-- Navbar End -->
 
     <div class="container-custom">
@@ -31,8 +36,8 @@
                     <div class="page-title d-flex flex-column flex-md-row align-items-center align-items-md-start">
                         <img src="<?=base_url();?>assets/images/personal-information.svg" class="me-5" width="64px" alt="personal-information-icon">
                         <span class="d-flex flex-column align-items-center">
-                            <h1>Personal Information</h1>
-                            <h6 class="fw-light text-center">Fill the following personal information & click on Next.</h6>
+                            <h1>&nbspPersonal Information</h1>
+                            <h6 class="fw-light text-center">&nbspFill the following personal information & click on Next.</h6>
                         </span>
                     </div>
                     <div class="page-content">
@@ -102,34 +107,34 @@
                         </form>
                     </div>
                     <div class="nav-bar">
-                        <button class="right" onclick="next_page()" id="next1">Next</button>
+                        <button class="right" onclick="next_page()" id="next1" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px;position:relative; top: 15px;"><b>Next</b</button>
                     </div>
                 </div>
 
                 <!-- page 2 -->
-                <div class="page page-1" id="page-1"><b>Page 2</b>
+                <div class="page page-1" id="page-1">
                     <div class="page-title d-flex flex-row align-items-start">
-                        <img src="./assets/images/personal-information.svg" class="me-5" width="64px" alt="personal-information-icon">
+                    <img src="<?=base_url();?>assets/images/personal-information.svg" class="me-5" width="64px" alt="personal-information-icon">
                         <span class="">
-                            <h1>Personal Information</h1>
-                            <h6 class="fw-light">Fill the following personal information & click on Next.</h6>
+                            <h1 >&nbspPersonal Information</h1>
+                            <h6 class="fw-light">&nbspFill the following personal information & click on Next.</h6>
                         </span>
                     </div>
                     <div class="page-content">
                         <form action="">
                             <!-- registration roll room -->
                             <div class="row mt-5">
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Registration No.</h4>
                                     <input class="input-field" type="number" name="reg_no" placeholder="University Registration No." id="">
                                 </div>
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Roll No.</h4>
                                     <input class="input-field" type="number" name="roll_no" placeholder="College Roll No." id="">
                                 </div>
                             </div>
                             <!-- dob & gender-field -->
-                            <div class="row mt-4 info-set-1">
+                            <div class="row mt-5 ">
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>University</h4>
                                     <input class="input-field" type="text" name="uni_name" placeholder="Name of University" id="">
@@ -141,7 +146,7 @@
                             </div>
                             <!-- branch course -->
                             <div class="row mt-4">
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Course</h4>
                                     <div class="input-field d-flex">
                                         <select class="select-custom" name="" id="">
@@ -151,7 +156,7 @@
                                         </select>
                                     </div>                                
                                 </div>
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Branch</h4>
                                     <div class="input-field d-flex">
                                         <select class="select-custom" name="" id="">
@@ -164,11 +169,11 @@
                             </div>
                             <!-- hostel room -->
                             <div class="row mt-4">
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Hostel No.</h4>
                                     <input class="input-field" type="number" name="hostel_no" placeholder="Hostel No." id="">
                                 </div>
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Room No.</h4>
                                     <input class="input-field" type="number" name="room_no" placeholder="Room No." id="">
                                 </div>
@@ -176,54 +181,61 @@
                         </form>
                     </div>
                     <div class="nav-bar">
-                        <div class="left" id="prev2" onclick="prev_page()">Previous</div>
-                        <div class="right" id="next2" onclick="next_page()">Next</div>
+                        <div class="left" id="prev2" onclick="prev_page()" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; top:20px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 130;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;padding: 5px">Previous</div>
+                        <div class="right" id="next2" onclick="next_page()" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;font-weight: bold;    position: relative; top: 22px;padding: 5px;">Next</div>
                     </div>
                 </div> 
                 
                 <!-- page-3 -->
-                <div class="page" id="page-2"><b>Page 3</b>
+                <div class="page" id="page-2">
                     <div class="page-content">
                         <form action="">
                             <!-- registration roll room -->
                             <div class="row mt-5">
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Phone No.</h4>
                                     <input class="input-field" type="number" name="phone_no" placeholder="Phone No." id="">
                                 </div>
-                                <div class="input-wrap col-12 col-md-4">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Alternate Phone No.</h4>
                                     <input class="input-field" type="number" name="alt_phone_no" placeholder="Alternate Phone No." id="">
                                 </div>
                             </div>
                             <!-- dob & gender-field -->
+                           
                             <div class="row mt-4">
-                                <div class="input-wrap  info-set-2">
+                                <div class="input-wrap col-12 col-md-6">
                                     <h4>Address</h4>
-                                    <input class="input-field" type="text" name="address_line_1" placeholder="Street/Locality" id="">
+                                    
                                     <input class="input-field mt-2" type="text" name="address_line_1" placeholder="Street/Locality" id="">
                                 </div>
-                                <div class="row mt-2">
-                                    <div class="input-wrap col-12 col-md-4">
+                                <div class="row mt-5">
+                                    <div class="input-wrap col-12 col-md-6">
                                         <input class="input-field" type="text" name="city" placeholder="City" id="">
                                     </div>
-                                    <div class="input-wrap col-12 col-md-4">
+                                    <div class="input-wrap col-12 col-md-6">
                                         <input class="input-field" type="text" name="state" placeholder="State" id="">
                                     </div>
+
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="nav-bar">
-                        <div class="left" id="prev3" onclick="prev_page()">Previous</div>
-                        <div class="right"><button id="btn">Submit</button></i></div>
-                    </div>
+                        <div class="left" id="prev3" onclick="prev_page() " style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; top:20px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 130;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;padding: 5px">Previous</div>
+                        <!-- <div class="right"> -->
+                            <button id="btn" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; right: 5px; top:23px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;float: right;">Submit</button></i></div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div> 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="<?=base_url();?>assets/js/script-slider-form.js"></script>
+    
 
 <script type="text/javascript">
     
