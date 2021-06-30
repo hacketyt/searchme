@@ -196,7 +196,7 @@
                                         <option value="">College 4</option>    
                                     </select>
                                 </div>
-                                <input class="input-field" type="number" name="" placeholder="XXXXXXXX" id="reg_no">    
+                                <input class="input-field mt-2" type="number" name="" placeholder="XXXXXXXX" id="reg_no">    
                             </span>
                             <span class="mt-4 password-section">
                                 <span class="d-flex justify-content-between mb-">
@@ -310,7 +310,7 @@
         // $(document).ready(function(){
             
          //send mail function
-         function send_mail_signup(){
+         function send_mail_signup(){ 
             $.ajax({
                         type:"post",
                         url:"<?=base_url('main_helper/otpSend_registerUser');?>",
@@ -586,7 +586,7 @@
                         $("#signup_submit").css('opacity','0.8');
                     },
                     success:function(data){
-                        // console.log(data);
+                        console.log(data);
                         key=data.key;
                         
 
@@ -604,7 +604,7 @@
          // return result;
          if(result==1){
             // alert("signup Completed");
-            location.href="<?=base_url('main/loggedIn');?>";
+            location.href="<?=base_url('main/form_addon');?>";
             
         }else{
             alert("Try Again");
@@ -693,18 +693,18 @@ $("#submit_btn_login").click(function() {
                         $("#submit_btn_login").css('opacity','0.8');
                     },
                     success:function(data){
-                        // console.log(data);
+                        console.log(data);
                         key=data.key;
                         
 
                         // alert(data.data);
-                        if(data.status!=0){
+                        if(data.status==1){
                             $("#error_email_login").html("");
                             alert("Logged In");
-                        }else{
-                           
+                        }else if(data.status==0){
                             login_error();
-                            
+                        }else if(data.status==2){
+                            window.location.href="<?=base_url('main/form_addon');?>";
                         }
 
                         $("#submit_btn_login").removeAttr('disabled');

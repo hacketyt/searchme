@@ -18,7 +18,7 @@
        
         
 </head>
-<body>
+<body> 
 
 <!-- navbar -->
 <?php
@@ -45,7 +45,7 @@ $this->load->view('website/nav_bar');
 
                             <!-- name-field -->
                             <div class="mt-3 mt-md-5">
-                                <h4>Name</h4>
+                                <h4>Name*</h4>
                                 <div class="row">
                                     <div class="input-wrap col-12 col-md-4">
                                         <input class="input-field" type="text" name="First_Name" placeholder="First Name" id="first_name">
@@ -63,12 +63,12 @@ $this->load->view('website/nav_bar');
 
                             <div class="row mt-4">
                                 <div class="input-wrap col-12 col-md-4">
-                                    <h4>Date of Birth</h4>
+                                    <h4>Date of Birth*</h4>
                                     <input class="input-field" type="date" name="First_Name" placeholder="First Name" id="dob">
                                 </div>
     
                                 <div class="input-wrap col-12 col-md-4">
-                                    <h4>Gender</h4>
+                                    <h4>Gender*</h4>
                                     <div class="input-field d-flex">
                                         <select class="select-custom" name="" id="gender">
                                             <option value="">Gender</option>
@@ -107,7 +107,7 @@ $this->load->view('website/nav_bar');
                         </form>
                     </div>
                     <div class="nav-bar">
-                        <button class="right" onclick="next_page()" id="next1" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px;position:relative; top: 15px;"><b>Next</b</button>
+                        <button class="right" id="next1" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px;position:relative; top: 15px;"><b>Next</b</button>
                     </div>
                 </div>
 
@@ -125,44 +125,44 @@ $this->load->view('website/nav_bar');
                             <!-- registration roll room -->
                             <div class="row mt-5">
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>Registration No.</h4>
-                                    <input class="input-field" type="number" name="reg_no" placeholder="University Registration No." id="">
+                                    <h4>Registration No.*</h4>
+                                    <input class="input-field" type="number" name="reg_no" placeholder="University Registration No." id="reg_no">
                                 </div>
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>Roll No.</h4>
-                                    <input class="input-field" type="number" name="roll_no" placeholder="College Roll No." id="">
+                                    <h4>Roll No.*</h4>
+                                    <input class="input-field" type="number" name="roll_no" placeholder="College Roll No." id="roll_no">
                                 </div>
                             </div>
                             <!-- dob & gender-field -->
                             <div class="row mt-5 ">
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>University</h4>
-                                    <input class="input-field" type="text" name="uni_name" placeholder="Name of University" id="">
+                                    <h4>University*</h4>
+                                    <input class="input-field" type="text" name="uni_name" placeholder="Name of University" id="university">
                                 </div>
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>College</h4>
-                                    <input class="input-field" type="text" name="college_name" placeholder="Name of College" id="">
+                                    <h4>College*</h4>
+                                    <input class="input-field" type="text" name="college_name" placeholder="Name of College" id="college">
                                 </div>
                             </div>
                             <!-- branch course -->
                             <div class="row mt-4">
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>Course</h4>
+                                    <h4>Course*</h4>
                                     <div class="input-field d-flex">
-                                        <select class="select-custom" name="" id="">
-                                            <option value="">B.Tech</option>
-                                            <option value="">M.Tech</option>
-                                            <option value="">MBA</option>
+                                        <select class="select-custom" name="" id="course">
+                                            <option value="b.tech">B.Tech</option>
+                                            <option value="m.tech">M.Tech</option>
+                                            <option value="mba">MBA</option>
                                         </select>
                                     </div>                                
                                 </div>
                                 <div class="input-wrap col-12 col-md-6">
-                                    <h4>Branch</h4>
+                                    <h4>Branch*</h4>
                                     <div class="input-field d-flex">
-                                        <select class="select-custom" name="" id="">
-                                            <option value="">Computer Science & Engineering</option>
-                                            <option value="">Mechanical Engineering</option>
-                                            <option value="">MBA</option>
+                                        <select class="select-custom" name="" id="branch">
+                                            <option value="cse">Computer Science & Engineering</option>
+                                            <option value="me">Mechanical Engineering</option>
+                                            <option value="mba">MBA</option>
                                         </select>
                                     </div>
                                 </div>
@@ -171,18 +171,18 @@ $this->load->view('website/nav_bar');
                             <div class="row mt-4">
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>Hostel No.</h4>
-                                    <input class="input-field" type="number" name="hostel_no" placeholder="Hostel No." id="">
+                                    <input class="input-field" type="number" name="hostel_no" placeholder="Hostel No." id="hostel_no">
                                 </div>
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>Room No.</h4>
-                                    <input class="input-field" type="number" name="room_no" placeholder="Room No." id="">
+                                    <input class="input-field" type="number" name="room_no" placeholder="Room No." id="room_no">
                                 </div>
                             </div>   
                         </form>
                     </div>
                     <div class="nav-bar">
                         <div class="left" id="prev2" onclick="prev_page()" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; top:20px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 130;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;padding: 5px">Previous</div>
-                        <div class="right" id="next2" onclick="next_page()" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;font-weight: bold;    position: relative; top: 22px;padding: 5px;">Next</div>
+                        <div class="right" id="next2" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: 400;border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;font-weight: bold;    position: relative; top: 22px;padding: 5px;">Next</div>
                     </div>
                 </div> 
                 
@@ -194,11 +194,11 @@ $this->load->view('website/nav_bar');
                             <div class="row mt-5">
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>Phone No.</h4>
-                                    <input class="input-field" type="number" name="phone_no" placeholder="Phone No." id="">
+                                    <input class="input-field" type="number" name="phone_no" placeholder="Phone No." id="phone_no">
                                 </div>
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>Alternate Phone No.</h4>
-                                    <input class="input-field" type="number" name="alt_phone_no" placeholder="Alternate Phone No." id="">
+                                    <input class="input-field" type="number" name="alt_phone_no" placeholder="Alternate Phone No." id="alt_phone_no">
                                 </div>
                             </div>
                             <!-- dob & gender-field -->
@@ -207,14 +207,14 @@ $this->load->view('website/nav_bar');
                                 <div class="input-wrap col-12 col-md-6">
                                     <h4>Address</h4>
                                     
-                                    <input class="input-field mt-2" type="text" name="address_line_1" placeholder="Street/Locality" id="">
+                                    <input class="input-field mt-2" type="text" name="address_line_1" placeholder="Street/Locality" id="add1">
                                 </div>
                                 <div class="row mt-5">
                                     <div class="input-wrap col-12 col-md-6">
-                                        <input class="input-field" type="text" name="city" placeholder="City" id="">
+                                        <input class="input-field" type="text" name="city" placeholder="City" id="city">
                                     </div>
                                     <div class="input-wrap col-12 col-md-6">
-                                        <input class="input-field" type="text" name="state" placeholder="State" id="">
+                                        <input class="input-field" type="text" name="state" placeholder="State" id="state">
                                     </div>
 
                                 </div>
@@ -224,7 +224,7 @@ $this->load->view('website/nav_bar');
                     <div class="nav-bar">
                         <div class="left" id="prev3" onclick="prev_page() " style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; top:20px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 130;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;padding: 5px">Previous</div>
                         <!-- <div class="right"> -->
-                            <button id="btn" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; right: 5px; top:23px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;float: right;">Submit</button></i></div>
+                            <button id="final_submit" style="color: black;background-color: #6ab7b5;font-family: 'Inter', sans-serif;font-weight: bold;position: relative; right: 5px; top:23px; border: 5px solid #6ab7b5;text-transform: uppercase;width: 100;height: 45;cursor: pointer;letter-spacing: 2px;border-radius: 7px;transition: 1.5s;box-shadow:0 5px 50px #f5ebeb00 inset;margin-bottom:15px; text-align: center;float: right;">Submit</button></i></div>
                     <!-- </div> -->
                 </div>
             </div>
@@ -238,7 +238,9 @@ $this->load->view('website/nav_bar');
     
 
 <script type="text/javascript">
-    
+    var key ="<?php echo $this->security->get_csrf_hash(); ?>";
+    alert("<?=$opt_session_id;?>");
+//page 1 script
     var first_name;
     var middle_name;
     var last_name;
@@ -263,18 +265,128 @@ $this->load->view('website/nav_bar');
 
     $("#next1").click(function() {
         // next_page();
-        page1_data();
-        console.log("name: "+first_name+" "+middle_name+" "+last_name+" | dob: "+dob+" | gender: "+gender);
-
+        if(check_page1_data()){
+            next_page()
+        }else{
+            alert("Fill all required fields");
+        }
+        // console.log("name: "+first_name+" "+middle_name+" "+last_name+" | dob: "+dob+" | gender: "+gender);
     });
 
     function check_page1_data(){
+        page1_data();
         if(first_name==""||dob==""||gender==""){
-            $("#next1").attr('disabled', '');
+            // $("#next1").attr('disabled', '');
+            return false;
         }else{
-            $("#next1").removeAttr('disabled');
+            // $("#next1").removeAttr('disabled');
+            return true;
         }
     }
+
+    //page 2
+
+    var reg_no;
+    var roll_no;
+    var university;
+    var college;
+    var course;
+    var branch;
+    var hostel_no;
+    var room_no;
+
+    function page2_data(){
+        reg_no=$("#reg_no").val();
+        roll_no=$("#roll_no").val();
+        university=$("#university").val();
+        college=$("#college").val();
+        course=$("#course").val();
+        branch=$("#branch").val();
+        hostel_no=$("#hostel_no").val();
+        room_no=$("#room_no").val();
+
+        console.log(reg_no+","+roll_no+","+university+","+college+","+course+","+branch+","+hostel_no+","+room_no);
+
+    }
+
+    function check_page2_data(){
+        page2_data();
+        if(reg_no==""||roll_no==""|university==""||college==""||course==""||branch==""){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    $("#next2").click(function(){
+        if(check_page2_data()){
+            next_page();
+        }else{
+            alert("fill all required Fields");
+        }
+    });
+
+    //page 3
+
+    var phone_no;
+    var alt_phone_no;
+    var add1;
+    var city;
+    var state;
+
+    function page3_data(){
+        phone_no=$("#phone_no").val();
+        alt_phone_no=$("#alt_phone_no").val();
+        add1=$("#add1").val();
+        city=$("#city").val();
+        state=$("#state").val();
+    }
+
+    $("#final_submit").click(function(){
+        page3_data();
+        $.ajax({
+            type:"post",
+            url:"<?=base_url('main_helper/submit_addon_data');?>",
+            dataType:"json",
+            async:false,
+            data:{
+                "<?php echo $this->security->get_csrf_token_name();?>":key,
+                user_id:<?=$opt_session_id;?>,
+                first_name:first_name,
+                middle_name:middle_name,
+                last_name:last_name,
+                dob:dob,
+                gender:gender,
+                reg_no:reg_no,
+                roll_no:roll_no,
+                university:university,
+                college:college,
+                branch:branch,
+                course:course,
+                hostel_no:hostel_no,
+                room_no:room_no,
+                phone_no:phone_no,
+                alt_phone_no:alt_phone_no,
+                add1:add1,
+                city:city,
+                state:state
+            },
+            success:function(data){
+                console.log(data);
+                key=data.key;
+                if(data.data){
+                    alert("account Created Successfully");
+                }
+
+            },
+            error:function(data){
+                console.log(data);
+                key="<?php echo $this->security->get_csrf_hash(); ?>";
+            }
+
+        });
+    });
+
 
 
 </script>

@@ -34,9 +34,9 @@ class Main_helper extends CI_Controller {
 
 			$success = $this->_send_mail($input['email'],$random_val);
 
-			// $this->db->insert('otp_verification',['email'=>$input['email'],'otp'=>$random_val,'date_time'=>date('Y-m-d H:i:s')]);
+			$this->db->insert('otp_verification',['email'=>$input['email'],'otp'=>$random_val,'date_time'=>date('Y-m-d H:i:s')]);
 			if($success==1){
-				$this->db->insert('otp_verification',['email'=>$input['email'],'otp'=>$random_val,'date_time'=>date('Y-m-d H:i:s')]);
+				// $this->db->insert('otp_verification',['email'=>$input['email'],'otp'=>$random_val,'date_time'=>date('Y-m-d H:i:s')]);
 				$data['mail']=1;
 			}else{
 				$data['mail']=-1;
@@ -47,8 +47,8 @@ class Main_helper extends CI_Controller {
 			$this->_send_mail($input['email'],$otp_key->otp);
 			// $data['otp_value']=$otp_key->otp;
 		}
-		$data['key']=$this->security->get_csrf_hash();
-		
+		$data['key']=$this->security->get_csrf_hash(); 
+		$data['otp']=$random_val;
 
 		echo json_encode($data);
 
@@ -89,8 +89,6 @@ private function _send_mail($email,$random_val){
 		
 		$this->form_validation->run();
 
-		
-
 		$data['data']=form_error('email');
 
 		$data['key']=$this->security->get_csrf_hash();
@@ -119,13 +117,14 @@ private function _send_mail($email,$random_val){
 			// $data['data']=1;
 
 			$data['data']=$this->db->insert('user_detail',['email'=>$input['email'],'password'=>$password_new_hash,'account_created_date'=>date('Y-m-d H:i:s'),'otp_verify_status'=>1,'user_verified_status'=>0,'last_login'=>date('Y-m-d H:i:s')]);
-
+			$inserted_id=$this->db->insert_id();
+			$this->session->set_userdata('searchme_login_id_verify_otp',$inserted_id);
 			// $data['insert_error']=$this->db->last_query();
 		}else{
 			$data['data']=0;
 		}
 		// $data['fetched_otp']=$otp_selected->otp;
-
+		$data['session']=$this->session->userdata('searchme_login_id_verify_otp');
 		$data['key']=$this->security->get_csrf_hash();
 
 		echo json_encode($data);
@@ -149,13 +148,17 @@ private function _send_mail($email,$random_val){
 		$email=$input['email'];		
 
 		
-		$data['data']=$this->db->where('email',$email)->get('user_detail')->row();
-		// print_r($data['data']);
+		$get_data=$this->db->select('sn,password,first_name,otp_verify_status')->where('email',$email)->get('user_detail')->row();
 
-		if($data['data']!='' && password_verify($email."//".$password_old,$data['data']->password)){
-			$data['status']=1;
-		}else{
-			$data['status']=0;
+		$data['status']=0;
+		if($get_data!='' && password_verify($email."//".$password_old,$get_data->password)){
+			// $data['status']=1;
+			if($get_data->first_name!=""){
+				$data['status']=1;
+			}else{
+				$this->session->set_userdata('searchme_login_id_verify_otp',$get_data->sn);
+				$data['status']=2;
+			}
 		}
 		$data['key']=$this->security->get_csrf_hash();
 
@@ -206,6 +209,15 @@ public function reset_password_modify(){
 	echo json_encode($data);	
 }
 
+
+public function submit_addon_data(){
+	$input=$this->security->xss_clean($this->input->post());
+	$this->load->model('user_model');
+	$data['data']=$this->user_model->submit_addon($input);
+	$data['key']=$this->security->get_csrf_hash();
+
+	echo json_encode($data);	
+}
 
 
 
